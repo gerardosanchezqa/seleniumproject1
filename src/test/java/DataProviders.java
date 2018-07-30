@@ -2,12 +2,16 @@ import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.poi.ss.usermodel.*;
 import org.testng.annotations.DataProvider;
 
+import java.awt.*;
 import java.io.File;
 import java.io.IOException;
 
 public class DataProviders {
 
-    String excelFileLocation = "C:\\Users\\Gera\\Desktop\\LoginTestData.xlsx";
+    //String excelFileLocation = "C:\\Users\\Gera\\Desktop\\LoginTestData.xlsx";
+    String excelFileLocation = "/Users/gsanchez/Desktop/LoginTestData.xlsx";
+
+
 
     @DataProvider(name="loginDataProvider")
     public Object[][] loginDataProvider(){
