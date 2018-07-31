@@ -8,6 +8,7 @@ public class BankManagerLoginTest extends BaseTestCase{
         loginPage = goToWebsite("http://www.demo.guru99.com/V4/");
         managerHomePage = loginPage.login(userID, password);
         Assert.assertEquals(managerHomePage.getDisplayedUserID(), userID);
+        managerHomePage.captureScreenshot();
     }
 
     @Test(priority = 1, dataProvider = "InvalidLoginDataFromExcel")

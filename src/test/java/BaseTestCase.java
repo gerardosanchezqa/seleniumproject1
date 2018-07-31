@@ -3,6 +3,7 @@ import automation.components.ManagerHomePage;
 import automation.components.PagesFactory;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
@@ -17,7 +18,10 @@ public class BaseTestCase extends DataProviders{
 
     @BeforeTest
     public void before(){
-        webDriver = new ChromeDriver();
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--start-maximized");
+        options.addArguments("--start-fullscreen");
+        webDriver = new ChromeDriver(options);
         webDriver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
         PagesFactory pagesFactory = new PagesFactory(webDriver);
     }
